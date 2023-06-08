@@ -1,2 +1,2 @@
-# mjlyons.github.io
-Mike Lyons's GitHub Page
+# Mike Lyons
+Mike Lyons's Page
