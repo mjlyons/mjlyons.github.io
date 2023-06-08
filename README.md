@@ -1,2 +1,5 @@
 # Mike Lyons
-Mike Lyons's Page
+
+👋 Hi I'm Mike!
+
+- [GitHub](https://github.com/mjlyons)
