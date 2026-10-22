@@ -1,2 +1,6 @@
 title: Mike Lyons
 url: https://mikelyons.dev
+theme: jekyll-theme-primer
+permalink: /:year/:month/:day/:title/
+exclude:
+  - README.md

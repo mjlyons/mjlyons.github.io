@@ -1,0 +1,16 @@
+---
+layout: post
+title: "HBPv2 boards are back and working"
+date: 2012-01-09 21:20:30 -0500
+permalink: /2012/01/09/hbpv2-boards-are-back-and-working/
+wordpress_url: https://mjlyons.wordpress.com/2012/01/09/hbpv2-boards-are-back-and-working/
+---
+<p>Great news!</p>
+<p>The HBPv2 boards came back last Friday, and I&#8217;ve been testing them since.</p>
+<p><a href="/assets/images/wp/2012/01/hbb-v2-front-angle.jpg"><img src="/assets/images/wp/2012/01/hbb-v2-front-angle.jpg" alt="" title="An Assembled HBPv2 " width="590" height="391" class="aligncenter size-full wp-image-349" /></a></p>
+<p>The boards, fully assembled, weigh 4.16g. We calculated that the boards needed to be under 6.5g to take off, but our goal was 4.5g to achieve a longer battery life, easier flight control, and room for additional sensors. Doing better than our goal lets us add even more sensors and get longer flight times since the rotors don&#8217;t have to work as hard. </p>
+<p>Our two big concerns with the v2 boards was the regulator circuit and the interface with our optical flow camera since both had problems in the v1 design. It was pretty easy to test the regulator circuit: just plug it in and see if it regulates. I&#8217;m happy to say that it did. Yessssssssss!</p>
+<p>After a little debugging, we got the camera up and running too:</p>
+<p><a href="/assets/images/wp/2012/01/of-test-pattern.png"><img src="/assets/images/wp/2012/01/of-test-pattern.png" alt="" title="Optical flow camera test" width="590" height="197" class="aligncenter size-full wp-image-350" /></a></p>
+<p>I drew a test pattern on a Post-It note (left), then photographed it using an OF camera attached to the HBP board. The result is the image in the middle. If you stand back, you can faintly see the same test pattern in the lower right corner of the image. I took the same image, and turned up the contrast and smoothed it a bit so that it&#8217;s easier to see. Software running on the HBP does a similar operation to compensate for the OF camera&#8217;s low range.</p>
+<p>Now we know the HBP hardware is working. We&#8217;ll refine the RoboBee brain RTL and software running on top so it can fly on its own.</p>

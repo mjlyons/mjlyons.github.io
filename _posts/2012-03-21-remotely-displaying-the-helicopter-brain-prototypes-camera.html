@@ -1,0 +1,11 @@
+---
+layout: post
+title: "Remotely displaying the Helicopter Brain Prototype’s camera."
+date: 2012-03-21 23:44:00 -0400
+permalink: /2012/03/21/remotely-displaying-the-helicopter-brain-prototypes-camera/
+wordpress_url: https://mjlyons.wordpress.com/2012/03/21/remotely-displaying-the-helicopter-brain-prototypes-camera/
+---
+<p>Now that <a href="http://github.com/mjlyons/vspi" title="vSPI (Github)" target="_blank">vSPI</a> lets me quickly send data between the HBP FPGA board and my computer, I&#8217;ve been able to see what the helicopter sees in real time (~100fps).</p>
+<div class="flick_video" style="max-width: 100%;width: 226px;height: 400px;"><video src="https://www.flickr.com/photos/zoom-and-enhance/7004795299/play/appletv/aae2924a14/" controls  /></div>
+<p>It only took a day (well, a grad student day) to set up. Most of the time was debugging the proprietary camera interface and figuring out how to render video using OpenCV.</p>
+<p>The Python script running on my desktop computer, which grabs frames from the FPGA over vSPI and renders the video is only 44 lines. The code running on the FPGA itself to send the image data to the computer is less than 10 lines.</p>
