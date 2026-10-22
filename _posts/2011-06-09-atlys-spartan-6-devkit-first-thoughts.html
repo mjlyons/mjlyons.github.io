@@ -1,0 +1,25 @@
+---
+layout: post
+title: "Atlys (Spartan-6 Devkit) First Thoughts"
+date: 2011-06-09 23:48:08 -0400
+permalink: /2011/06/09/atlys-spartan-6-devkit-first-thoughts/
+wordpress_url: https://mjlyons.wordpress.com/2011/06/09/atlys-spartan-6-devkit-first-thoughts/
+---
+<p>I just finished part of my latest project and started messing around with the <a href="http://www.digilentinc.com/Products/Detail.cfm?NavPath=2,719,837&amp;Prod=ATLYS" title="Atlys" target="_blank">Atlys</a> board that came last week from Digilent. It features a Spartan 6 FPGA (Xilinx), the latest low-cost FPGA on sale. With the academic discount, it&#8217;s only $200 ($350 otherwise).</p>
+<p><a href="/assets/images/wp/2011/06/atlys.jpg"><img src="/assets/images/wp/2011/06/atlys.jpg" alt="" title="Atlys Board" width="590" height="442" class="aligncenter size-full wp-image-97" /></a></p>
+<p>As you can see, it&#8217;s a really small board, about the size of my hand. It even comes with a nice carrying case a bit larger than a VHS case.</p>
+<p>It comes with some cool peripherals:</p>
+<ul>
+<li>four HDMI ports (two in, two out)</li>
+<li>USB-programmer (so a JTAG debugger isn&#8217;t necessary, but is supported)</li>
+<li>USB HID devices (keyboard, mouse)</li>
+<li>UART-over-USB (USB/Serial dongles and null RS232 cables are getting old)
+<li>Mic, Line in/out, and headphone out (&#8220;HP OUT&#8221;). Warning: headphone out is REALLY LOUD</li>
+<li>The usual bank of switches, buttons, LEDs, and GPIOs</li>
+</ul>
+<p>I&#8217;m not sure what I need two HDMI inputs for, but it <i>seems</i> that it could be used for something really cool.</p>
+<p>I haven&#8217;t tried any of my own RTL, but Digilent has packaged some nice tools for interfacing with the board. You can emulate more switches and LEDs, program the flash or the FPGA directly, and run a whole slew of tests.</p>
+<p>My favorite feature though is real-time power monitoring. It will even draw a rolling graph, showing the power consumption.</p>
+<p><a href="/assets/images/wp/2011/06/atlys-power.png"><img src="/assets/images/wp/2011/06/atlys-power.png" alt="" title="Atlys Power Measurement" width="590" height="380" class="aligncenter size-full wp-image-98" /></a></p>
+<p>While running the power monitoring, I ran the demo bitstream and played with the buttons. This causes the FPGA to module a sine wave over the audio outputs and you can see the 1.2V (internal FPGA logic) go up! Flipping the switches turns on some of the board LEDs, and you can see the 3.3V IO current step up a bit too. </p>
+<p>I haven&#8217;t verified it, but I think the power monitoring should still work when running my own RTL and not Digilent&#8217;s demo. I&#8217;m also curious to see how software running on a soft core affects power, and if it correlates with power consumption on hard-coded circuits (ASICs). It seems that an separate microcontroller is talking with the utility running on my computer, and is independent of the FPGA. Very cool!</p>

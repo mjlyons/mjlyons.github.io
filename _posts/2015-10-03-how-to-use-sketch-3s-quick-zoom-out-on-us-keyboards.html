@@ -1,0 +1,41 @@
+---
+layout: post
+title: "Use Sketch 3’s quick-zoom on US keyboards"
+date: 2015-10-03 09:38:47 -0400
+permalink: /2015/10/03/how-to-use-sketch-3s-quick-zoom-out-on-us-keyboards/
+wordpress_url: https://mjlyons.wordpress.com/2015/10/03/how-to-use-sketch-3s-quick-zoom-out-on-us-keyboards/
+---
+<p>Sketch 3 has a cool feature where hitting the Section key ( § ) zooms out a bit while you hold it. It&#8217;s nice for when you&#8217;re zoomed in on something tiny, but want to see how it looks in the rest of your project.</p>
+<p>Unfortunately, US keyboards don&#8217;t have a § key. The directions below will map quick-zoom to your tilde ( ` ) key.</p>
+<hr />
+<p><strong>Step 1: </strong>Install <a href="https://pqrs.org/osx/karabiner/" target="_blank">Karabiner</a></p>
+<p><b>Step 2: </b>Add the Tilde/Section swap</p>
+<ul>
+<li>Open Karabiner</li>
+<li>Click the <em>Misc &amp; Uninstall </em>tab at the top</li>
+<li>Click the <em>Open private.xml</em> button</li>
+<li>Replace the contents of private.xml with the text block below and save
+<pre style="font-family:monospace;background:#eeeeee;padding:10px;">&lt;?xml version="1.0"?&gt;
+&lt;root&gt;
+  &lt;appdef&gt;
+    &lt;appname&gt;SKETCH3&lt;/appname&gt;
+    &lt;equal&gt;com.bohemiancoding.sketch3&lt;/equal&gt;
+  &lt;/appdef&gt;
+  &lt;item&gt;
+    &lt;name&gt;Swap Tilde (`) and Section (§) in Sketch 3&lt;/name&gt;
+    &lt;identifier&gt;private.appdef&lt;/identifier&gt;
+    &lt;only&gt;SKETCH3&lt;/only&gt;
+    &lt;autogen&gt;__KeyToKey__ KeyCode::BACKQUOTE, KeyCode::UK_SECTION&lt;/autogen&gt;
+    &lt;autogen&gt;__KeyToKey__ KeyCode::UK_SECTION, KeyCode::BACKQUOTE&lt;/autogen&gt;
+  &lt;/item&gt;
+&lt;/root&gt;</pre>
+</li>
+</ul>
+<p><strong>Step 3: </strong>Enable the Tilde/Section swap</p>
+<ul>
+<li>Click the <em>Change Key</em> tab at the top</li>
+<li>Click the <em>Reload XML</em> button</li>
+<li>Search for <em>Sketch 3</em> in the search box</li>
+<li>Check the box for <em>Swap Tilde ( ` ) and Section (§) in Sketch 3</em></li>
+</ul>
+<p><strong>Test it out: </strong>Zoom into something in Sketch 3, then hold the Tilde key.</p>

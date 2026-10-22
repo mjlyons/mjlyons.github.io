@@ -1,0 +1,32 @@
+---
+layout: post
+title: "Baking components to a PCB"
+date: 2012-01-05 11:02:33 -0500
+permalink: /2012/01/05/baking-components-to-a-pcb/
+wordpress_url: https://mjlyons.wordpress.com/2012/01/05/baking-components-to-a-pcb/
+---
+<p>The PCB passed all tests, so I sent it out for assembly. We&#8217;re paying another company to have a &#8220;pick-and-place&#8221; robot solder all the tiny components to our PCB. Some of the parts are just too small to do by human hands. Our FPGA&#8217;s pins are 0.8mm apart, and there&#8217;s 484 pins. Best to let a robot handle it.</p>
+<p>While I&#8217;m waiting for the assembly to come back, I thought I would document how I tested one of the regulator circuits. Since I&#8217;m just testing the regulator circuit, we only have to solder the components in that circuit, not all of them (and certainly not the FPGA, phew).</p>
+<p>Still, the components are very small (several 0402s which are 0.04in x 0.02in) and too small for me to use a soldering iron. There are some soldering iron ninjas that can do it, but sadly I&#8217;m not one of them. </p>
+<p>Instead, I &#8220;baked&#8221; the components onto the board. This involves spreading tiny amounts of solder paste onto each of the PCB pads, carefully dropping the components on top, and putting the whole thing in the oven to reflow the solder. It&#8217;s like baking cookies, except much more precise and not tasty.</p>
+<p>The first thing you need when baking PCBs is a good microscope. Here&#8217;s the one I used:</p>
+<p><a href="/assets/images/wp/2012/01/1-microscope1.jpg"><img class="size-full wp-image" src="/assets/images/wp/2012/01/1-microscope1.jpg" alt="Image" /></a></p>
+<p>The second thing you need is a way of spreading solder paste in very small quantities. I use a sewing pin attached to a xacto knife base. It&#8217;s very precise and weighted well: </p>
+<p><a href="/assets/images/wp/2012/01/2-solder-paste-spreader1.jpg"><img class="size-full wp-image" src="/assets/images/wp/2012/01/2-solder-paste-spreader1.jpg" alt="Image" /></a></p>
+<p>You can&#8217;t see it on the left, but there is a little drop of solder paste on the head of the pin. Looking in the microscope, you can see that the solder paste is just tiny spheres of solder suspended in some liquid.</p>
+<p>The trick is to use the pin to spread the solder paste across each of the pads on the PCB. It took a few hours to get it just right for the regulator circuit I was testing. You need to make sure each pad is well covered, but not shorting out (connecting) to neighboring pads. The slightest movement becomes large under the microscope, so you have to calibrate your coffee intake just right. I&#8217;ve heard some labs keep a few beers around to keep a steady hand. Or so they say.</p>
+<p>Once you&#8217;re done spreading solder paste over each pad, you VERY CAREFULLY drop the components on top. You have to be very precise, since a component that&#8217;s dropped incorrectly can short out pads and may require a lot of repainting. It sounds easy, but when you&#8217;re dropping 20-pin components with a pair of tweezers under a microscope, it&#8217;s a different beast.</p>
+<p><a href="/assets/images/wp/2012/01/3-pre-bake-full1.jpg"><img class="size-full wp-image" src="/assets/images/wp/2012/01/3-pre-bake-full1.jpg" alt="Image" /></a></p>
+<p>The photo above shows the result of the painting after dropping the components on top. Click the photo to see hi-res version. </p>
+<p><a href="/assets/images/wp/2012/01/4-pre-bake-zoom1.jpg"><img class="size-full wp-image" src="/assets/images/wp/2012/01/4-pre-bake-zoom1.jpg" alt="Image" /></a></p>
+<p>Here&#8217;s a zoomed in version above. You can see the spheres in the solder paste, and notice that there&#8217;s plenty on each pad. The trick is to get enough so that you&#8217;ll get good connections, but not so much that the pads short out. And don&#8217;t worry about the pads that look shorted on the right, they&#8217;re the same pad.</p>
+<p>Once all of the pads are painted and the components are dropped on top, it&#8217;s time to bake the PCB. We have a special oven for this purpose, though it&#8217;s in Chinese so we just memorize which buttons to press in which order. You can specify the temperature profile, which specifies what temperature of the oven at various times. Some parts are sensitive to the profile, but we&#8217;re not using anything delicate and stuck with the default profile others have used.</p>
+<p><a href="/assets/images/wp/2012/01/5-oven1.jpg"><img class="size-full wp-image" src="/assets/images/wp/2012/01/5-oven1.jpg" alt="Image" /></a></p>
+<p>After eight minutes, the PCB was all baked:</p>
+<p><a href="/assets/images/wp/2012/01/6-post-bake-full1.jpg"><img class="size-full wp-image" src="/assets/images/wp/2012/01/6-post-bake-full1.jpg" alt="Image" /></a></p>
+<p>You can see the spheres in the solder paste have all melted together and now bond the component pins to their PCB pads. Click the photo for the hi-res version.</p>
+<p>Here&#8217;s a zoomed in version:</p>
+<p><a href="/assets/images/wp/2012/01/7-post-bake-zoom1.jpg"><img class="size-full wp-image" src="/assets/images/wp/2012/01/7-post-bake-zoom1.jpg" alt="Image" /></a></p>
+<p>And lastly, here&#8217;s what the board looks like to the naked eye. Looks pretty good I think:</p>
+<p><a href="/assets/images/wp/2012/01/8-finished-zoom-out1.jpg"><img class="size-full wp-image" src="/assets/images/wp/2012/01/8-finished-zoom-out1.jpg" alt="Image" /></a></p>
+<p>Once the board was fully baked, we then powered the regulation circuit and make sure it was generating the correct output voltage. Once it did, we knew the regulation circuit was working properly. Woohoo!</p>

@@ -1,0 +1,13 @@
+---
+layout: post
+title: "Regulator can power HBP components"
+date: 2011-12-16 11:04:12 -0500
+permalink: /2011/12/16/regulator-can-power-hbp-components/
+wordpress_url: https://mjlyons.wordpress.com/2011/12/16/regulator-can-power-hbp-components/
+---
+<p>The last test showed the main voltage regulation circuit was working on the v2 boards, but we hadn&#8217;t tried powering anything.</p>
+<p>I took one of the old v1 boards and quarantined it&#8217;s non-working regulation circuit out. I then connected the HBPv2 PCB with the working regulator in, to power the rest of the v1 board. Here&#8217;s the frankenstein job:</p>
+<div id="attachment_126" style="width: 600px" class="wp-caption aligncenter"><a href="/assets/images/wp/2011/12/hbp-v1-v2.jpg"><img src="/assets/images/wp/2011/12/hbp-v1-v2.jpg" alt="HBP-v1-v2" title="HBP-v1-v2" width="590" height="393" class="size-full wp-image-126" /></a><p id="caption-attachment-126" class="wp-caption-text">HBP-v1-v2</p></div>
+<p>We need to send the boards out for assembly to completely build a full board, which costs several thousand dollars, including component parts and the assembly labor itself. By using the v2 regulator circuit with the old v1 boards, we can verify that the regulator can power all the components without spending all that money. </p>
+<p>I&#8217;m happy to say that our FPGA programmed successfully, so it looks like the HBPv2&#8217;s main voltage regulation circuit is fixed =). Photographic proof:</p>
+<div id="attachment_127" style="width: 600px" class="wp-caption aligncenter"><a href="/assets/images/wp/2011/12/hbp-v1-v2-prog.jpg"><img src="/assets/images/wp/2011/12/hbp-v1-v2-prog.jpg" alt="HBP-v1-v2 FPGA programming success" title="HBP-v1-v2 FPGA programming success" width="590" height="200" class="size-full wp-image-127" /></a><p id="caption-attachment-127" class="wp-caption-text">HBP-v1-v2 FPGA programming success</p></div>

@@ -1,0 +1,37 @@
+---
+layout: post
+title: "How to quickly pick movies at a film festival using jQuery, Google Spreadsheets, and Python"
+date: 2012-08-25 16:41:54 -0400
+permalink: /2012/08/25/377/
+wordpress_url: https://mjlyons.wordpress.com/2012/08/25/377/
+---
+<p>My Dad and I are going to TIFF&#8217;12, which is one of the biggest film festivals in the world. Unlike many of the other top-tier film festivals, TIFF goes to incredible lengths to make the festival accessible to everyone, not just people in the film industry. There&#8217;s roughly 400 films this year, and each are shown at least two or three times over the week and a half that TIFF takes over virtually every movie screen in Toronto.</p>
+<p>Picking movies for TIFF is always a complicated process, and one that changes every year. This is the first time you can sign up online &#8211; you used to fill out a crazy sheet of paper listing your first and second choices and hope your sheet got picked first. This year, you get a randomly assigned 1 hour window, but you can now see which films are already sold out and pick replacements.</p>
+<p>I&#8217;m currently finishing up my internship at Dropbox this week, and I&#8217;m also on the opposite coast as my dad, so picking movies was going to be especially tough this time around, but I think I have a good system down.</p>
+<ol>
+<li>I scraped the TIFF webpage to build a spreadsheet that had the name of each film and a link to its description, stills, and trailer.</li>
+<li>I put shared the spreadsheet with my dad using Google Docs</li>
+<li>We both rated each film</li>
+<li>I wrote a script that organized the films based on our ratings</li>
+<li>I&#8217;ll use this sorted list to pick films</li>
+</ol>
+<p>In case anyone else wants to do this, I&#8217;m making my scripts available:</p>
+<p><strong>Scraping the TIFF movie list:</strong></p>
+<p>Since the TIFF site uses jQuery, and has a nice DOM hierarchy for each film, this was pretty easy to do in my browser&#8217;s Javascript console: <a title="parse-film-page.py" href="https://www.dropbox.com/s/ddsmvcfbasq0u6v/parse-film-page.js" target="_blank">parse-film-page.js</a></p>
+<pre></pre>
+<p>The result is a CSV formatted list of each movie. Just put that in a Google Spreadsheet (or some other spreadsheet program) and you can quickly click each link, decide how interesting the movie looks, and add your rating in the spreadsheet.</p>
+<p>In case you just want the CSV, you can download it here: <a title="tiff12-films.csv" href="https://www.dropbox.com/s/pkixr3sx9weca4n/tiff12-films.csv" target="_blank">tiff-12-films.csv</a></p>
+<p><strong>Sorting film picks</strong></p>
+<p>My dad and I added our scores to each movie, 1 (avoid) to 5 (must see). Google Spreadsheets made this really easy for us to both do at the same time. Since we are both fully employed and the rating process takes hours, this was very helpful.</p>
+<p>I exported the spreadsheet with scores back out to a CSV and implemented a Python script that put each movie into one of six buckets:</p>
+<ol>
+<li>Both of us rated &#8216;5&#8217;</li>
+<li>One of us rated &#8216;5&#8217;</li>
+<li>Both of us rated &#8216;4&#8217;</li>
+<li>One rated &#8216;4&#8217;, one rated &#8216;3&#8217;</li>
+<li>One rated &#8216;4&#8217;, one rated &#8216;2&#8217;</li>
+<li>Both rated &#8216;3&#8217;</li>
+</ol>
+<p>The script spit out another CSV that I&#8217;ve imported back into the Google Spreadsheet, which I&#8217;ll use when I&#8217;m picking movies in my one hour window. I&#8217;ll try to fit in as many of the first bucket before going down the next, until I&#8217;ve picked all twenty movies we&#8217;ll see over the five days we&#8217;ll be in Toronto.</p>
+<p>You can find the sorting script here: <a title="pick-films.py" href="https://www.dropbox.com/s/bld3lbb9r1k2431/pick-films.py" target="_blank">pick-films.py</a></p>
+<p>Good luck to everyone doing their TIFF&#8217;12 picks this weekend!</p>
